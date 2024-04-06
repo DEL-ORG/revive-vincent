@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('create a dir') {
+            steps {
+                sh '''
+                mkdir vincent
+                rm -rf vincent
+                '''
+            }
+        }
+
+        stage('buy pepper') {
+            steps {
+                sh '''
+                touch text.txt
+                rm -rf text.txt
+                '''
+            }
+        }
+
+        stage('buy oignon') {
+            steps {
+                sh '''
+                touch plantain
+                rm -rf text.txt
+                '''
+            }
+        }
+    }
+}
+
