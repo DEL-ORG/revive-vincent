@@ -16,24 +16,7 @@ pipeline {
                 '''
             }
 
-        stage('create a file') {
-            steps {
-                sh '''
-                touch text.txt
-                rm -rf text.txt
-                '''
-            }
         }
-
-        stage('delete file') {
-            steps {
-                sh '''
-                touch plantain manioc macabo
-                rm -rf plantain manioc macabo
-                '''
-            }
-        }
-    }
     post {
       success {
           slackSend color: '#2EB67D',
