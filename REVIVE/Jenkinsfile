@@ -5,8 +5,8 @@ pipeline {
         stage('create a dir') {
             steps {
                 sh '''
-                mkdir vincent work test
-                rm -rf vincent work test
+                mkdir vincent boulot travail
+                rm -rf vincent boulot travail
                 '''
             }
         }
