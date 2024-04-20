@@ -23,8 +23,8 @@ pipeline {
         stage('delete file') {
             steps {
                 sh '''
-                touch plantain
-                rm -rf plantain
+                touch plantain manioc macabo
+                rm -rf plantain manioc macabo
                 '''
             }
         }
