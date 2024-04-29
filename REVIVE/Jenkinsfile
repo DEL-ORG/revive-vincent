@@ -12,7 +12,8 @@ pipeline {
             steps {
                 sh '''
             cd $WORKSPACE/REVIVE/src/catalog/
-            go test             
+            go test 
+            ls                       
                 '''
             }
 
