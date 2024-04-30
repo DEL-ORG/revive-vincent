@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Test microservice catalog') {
-            agent {
+            agent any {
              docker {
                image 'golang:1.20.1'
                args '-u 0:0'
