@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        // Define environment variables here if needed
-        // GIT_USERNAME = credentials('evf1981').username
-        // GIT_SSH_KEY = credentials('github-ssh').getPrivateKey()
+    //     // Define environment variables here if needed
+    //     // GIT_USERNAME = credentials('evf1981').username
+        GIT_SSH_KEY = credentials('github-ssh').getPrivateKey()
     }
 
     options {
@@ -18,7 +18,7 @@ pipeline {
         string(name: 'BRANCH_NAME', defaultValue: 'feature-branch-vincent', description: 'Enter the name of the branch')
     }
     
-    
+
     stages {
         stage('Clone Repository') {
             steps {
