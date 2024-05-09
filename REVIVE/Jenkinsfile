@@ -3,8 +3,8 @@ pipeline {
 
     environment {
     //  AWS_Cred = 'AWS_Cred'
-        GIT_USERNAME = credentials('evf1981').username
-        GIT_SSH_KEY = credentials('github-ssh').getPrivateKey()
+        // GIT_USERNAME = credentials('evf1981').username
+        // GIT_SSH_KEY = credentials('github-ssh').getPrivateKey()
      }
 
     options {
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     git credentialsId: 'github-ssh',
-                        url: 'git@github.com:DEL-ORG/revive-vincent.git',
+                        url: 'https://github.com/DEL-ORG/revive-vincent.git',
                         branch: "${params.BRANCH_NAME}"
                 }
             }
