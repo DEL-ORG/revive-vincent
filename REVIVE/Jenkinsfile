@@ -28,7 +28,26 @@ pipeline {
                 }
             }
         }
+
+        stage('create directory') {
+            steps {
+                script {
+                    '''
+                    mkdir banana rice oil
+                    '''
+                }
+            }
+        }
+
+        stage('create file') {
+            steps {
+                script {
+                    '''
+                    touch plantain cassava watermelon
+                    '''
+                }
+            }
+        }            
         
-        // Add more stages here as needed
     }
 }
