@@ -1,11 +1,11 @@
 pipeline {
     agent any
 
-    environment {
-    //     // Define environment variables here if needed
-    //     // GIT_USERNAME = credentials('evf1981').username
-              GIT_SSH_KEY = credentials('github-ssh').getPrivateKey()
-    }
+    // environment {
+    // //     // Define environment variables here if needed
+    // //     // GIT_USERNAME = credentials('evf1981').username
+    //     // GIT_SSH_KEY = credentials('github-ssh').getPrivateKey()
+    // }
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '7'))
