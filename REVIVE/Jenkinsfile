@@ -18,8 +18,9 @@ pipeline {
     parameters {
         string(name: 'BRANCH_NAME', defaultValue: 'feature-branch-vincent', description: 'Enter the name of the branch')
     }
-      
-    stage('Clone Repository') {
+    
+    stages
+        stage('Clone Repository') {
             steps {
                 script {
                     git credentialsId: 'github-ssh',
