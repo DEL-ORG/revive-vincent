@@ -2,9 +2,7 @@ pipeline {
     agent any
 
     // environment {
-    // //     // Define environment variables here if needed
-    // //     // GIT_USERNAME = credentials('evf1981').username
-    //     // GIT_SSH_KEY = credentials('github-ssh').getPrivateKey()
+    
     // }
 
     options {
@@ -39,11 +37,12 @@ pipeline {
             }
         }
 
-        stage('create file') {
+        stage('delete directory and file') {
             steps {
                 script {
                     '''
-                    touch plantain cassava watermelon
+                    rm -rf banana rice oil
+                    rm plantain cassava watermelon
                     '''
                 }
             }
