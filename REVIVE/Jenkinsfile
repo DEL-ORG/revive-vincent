@@ -18,6 +18,7 @@ pipeline {
         string(name: 'BRANCH_NAME', defaultValue: 'feature-branch-vincent', description: 'Enter the name of the branch')
     }
     
+    
     stages {
         stage('Clone Repository') {
             steps {
