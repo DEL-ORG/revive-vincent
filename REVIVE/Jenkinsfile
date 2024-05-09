@@ -2,16 +2,15 @@ pipeline {
     agent any
 
     environment {
-    //  AWS_Cred = 'AWS_Cred'
+        // Define environment variables here if needed
         // GIT_USERNAME = credentials('evf1981').username
         // GIT_SSH_KEY = credentials('github-ssh').getPrivateKey()
-     }
+    }
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '7'))
-        //skipDefaultCheckout(true)
         disableConcurrentBuilds()
-        timeout (time: 10, unit: 'MINUTES')
+        timeout(time: 10, unit: 'MINUTES')
         timestamps() 
     }
     
@@ -19,7 +18,7 @@ pipeline {
         string(name: 'BRANCH_NAME', defaultValue: 'feature-branch-vincent', description: 'Enter the name of the branch')
     }
     
-    stages
+    stages {
         stage('Clone Repository') {
             steps {
                 script {
@@ -29,20 +28,7 @@ pipeline {
                 }
             }
         }
-
-//     stages {
-//         stage('Clone Repository') {
-//             steps {
-//             withCredentials([usernamePrivateKey(credentialsId: 'github-ssh',
-//              usernameVariable: 'GIT_USERNAME',
-//             //   passphraseVariable: '',
-//               privateKeyVariable: 'GIT_SSH_KEY')]) {
-//                 echo "Cloning repository..."
-//                 checkout([$class: 'GitSCM', 
-//                           branches: [[name: "${params.BRANCH_NAME}"]],
-//                           userRemoteConfigs: [[url: 'git@github.com:DEL-ORG/revive-vincent.git']]]) 
-//             }
-//         }
-//     }
-// }
+        
+        // Add more stages here as needed
+    }
 }
