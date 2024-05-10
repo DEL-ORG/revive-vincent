@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        docker_hub_credential = credentials(dockerhub-jenkins)
-        github_credential = credentials(github-ssh)
+        docker_hub_credential = credentials("dockerhub-jenkins")
+        github_credential = credentials("github-ssh")
     }
 
     options {
@@ -40,7 +40,7 @@ pipeline {
                 }
         }
     
-    
+
         stage('create directory') {
             steps {
                 script {
