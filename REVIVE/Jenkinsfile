@@ -27,20 +27,7 @@ pipeline {
                 }
             }
         }
-    }
-
-        // stage('Login to DockerHub') {
-        //     steps {
-        //         withCredentials([usernamePassword(credentialsId: 'Dockerhub-Jenkins',
-        //              usernameVariable: 'DOCKERHUB_USERNAME',
-        //              passwordVariable: 'DOCKERHUB_PASSWORD')]) {
-        //             sh """
-        //                 docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-        //             """
-        //              }
-        //         }
-        // }
-
+    
         stage('create directory') {
             steps {
                 script {
@@ -61,34 +48,10 @@ pipeline {
                 }
             }
         } 
-
-    // post {
-    //   always {
-    //     success {
-    //         slackSend color: '#2EB67D',
-    //         channel: 'a1-catchup-jenkins', 
-    //         message: "*Revive Project Build Status*" +
-    //         "\n Project Name: Revive" +
-    //         "\n Job Name: ${env.JOB_NAME}" +
-    //         "\n Build number: ${currentBuild.displayName}" +
-    //         "\n Build Status : *SUCCESS*" +
-    //         "\n Build url : ${env.BUILD_URL}"
-    //     }
-    //     failure {
-    //         slackSend color: '#E01E5A',
-    //         channel: 'a1-catchup-jenkins',  
-    //         message: "*Revive Project Build Status*" +
-    //         "\n Project Name: Revive" +
-    //         "\n Job Name: ${env.JOB_NAME}" +
-    //         "\n Build number: ${currentBuild.displayName}" +
-    //         "\n Build Status : *FAILED*" +
-    //         "\n Build User : *Tia*" +
-    //         "\n Action : Please check the console output to fix this job IMMEDIATELY" +
-    //         "\n Build url : ${env.BUILD_URL}"
-    //     }
-    //   }    
-        
+      
     }
+
+}
 
     
 
