@@ -44,7 +44,7 @@ pipeline {
         stage('create directory') {
             steps {
                 script {
-                    '''
+                    sh '''
                     mkdir banana rice oil
                     '''
                 }
@@ -54,13 +54,14 @@ pipeline {
         stage('delete directory and file') {
             steps {
                 script {
-                    '''
+                    sh '''
                     rm -rf banana rice oil
                     rm plantain cassava watermelon
                     '''
                 }
             }
         } 
+
     // post {
     //   always {
     //     success {
