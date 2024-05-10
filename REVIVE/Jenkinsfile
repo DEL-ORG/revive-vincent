@@ -44,7 +44,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    mkdir banana rice oil
+                    mkdir banana rice 
                     """
                 }
             }
@@ -53,9 +53,9 @@ pipeline {
         stage('delete directory and file') {
             steps {
                 script {
-                    sh '''
-                    rm -rf banana rice oil
-                    '''
+                    sh """
+                    rm -rf banana rice 
+                    """
                 }
             }
         } 
