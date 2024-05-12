@@ -43,7 +43,7 @@ pipeline {
         stage('test ui') {
             agent {
              docker {
-               image 'eric1981/ui-maven:3-eclipse-temurin-21-jammy'
+               image 'eric1981/ui-maven:v1.0.0'
                args '-u root:root'
             }    
         } 
