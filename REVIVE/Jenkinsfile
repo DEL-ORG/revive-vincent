@@ -48,10 +48,10 @@ pipeline {
             }    
         } 
             steps {
-                sh '''
+                sh """
             cd REVIVE/src/ui
             mvn test -DskipTests=true
-                '''
+                """
             }
         
         }
