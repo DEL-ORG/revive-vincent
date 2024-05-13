@@ -57,21 +57,21 @@ pipeline {
         }
 
 
-    //     stage('test catalog') {
-    //         agent {
-    //          docker {
-    //            image 'eric1981/catalog-golang:v3.19'
-    //            args '-u 0:0'
-    //         }    
-    //     }
-    //     steps {
-    //             sh '''
-    //         cd REVIVE/src/catalog 
-    //         go test -buildscv=false
-    //             '''
-    //         }
+        stage('test catalog') {
+            agent {
+             docker {
+               image 'eric1981/catalog-golang:v1.0.0'
+               args '-u 0:0'
+            }    
+        }
+        steps {
+                sh '''
+            cd REVIVE/src/catalog 
+            go test -buildscv=false
+                '''
+            }
         
-    //     }
+        }
     
     //     stage('create directory') {
     //         steps {
